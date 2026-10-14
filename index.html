@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RecallLoop is a C++ DSA active-recall system for placement interviews: 46 must-repeat questions, 16 patterns, spaced repetition, and timed practice.">
+  <meta name="theme-color" content="#101b35">
+  <meta property="og:title" content="RecallLoop — C++ DSA Interview Recall Lab">
+  <meta property="og:description" content="Recognize the pattern. Reconstruct the code. Recall it under pressure.">
+  <meta property="og:type" content="website">
+  <title>RecallLoop — C++ DSA Interview Recall Lab</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Primary navigation">
+      <a class="brand" href="#/today" aria-label="RecallLoop home">
+        <span class="brand-mark" aria-hidden="true">R<span>↻</span></span>
+        <span class="brand-copy"><strong>RecallLoop</strong><small>DSA memory lab</small></span>
+      </a>
+      <nav class="side-nav" id="side-nav">
+        <a href="#/today" data-nav="today"><span class="nav-icon">⌂</span><span>Today</span></a>
+        <a href="#/library" data-nav="library"><span class="nav-icon">⌕</span><span>Library</span></a>
+        <a href="#/patterns" data-nav="patterns"><span class="nav-icon">◇</span><span>Pattern map</span></a>
+        <a href="#/recall" data-nav="recall"><span class="nav-icon">↻</span><span>Recall lab</span><b id="due-badge" class="nav-badge" hidden>0</b></a>
+        <a href="#/interview" data-nav="interview"><span class="nav-icon">◷</span><span>Interview</span></a>
+        <a href="#/progress" data-nav="progress"><span class="nav-icon">↗</span><span>Progress</span></a>
+      </nav>
+      <div class="sidebar-note">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <p><strong>Recall rule</strong><br>Close the answer. Say the invariant. Then code.</p>
+      </div>
+    </aside>
+
+    <div class="main-column">
+      <header class="topbar">
+        <button class="mobile-brand" data-action="go-today" aria-label="Go to Today"><span>RL</span></button>
+        <button class="command-search" data-action="open-search" aria-label="Search questions">
+          <span aria-hidden="true">⌕</span><span>Search 46 questions…</span><kbd>/</kbd>
+        </button>
+        <div class="topbar-actions">
+          <span class="streak-pill" id="streak-pill" title="Current practice streak">🔥 <b>0</b><span> day streak</span></span>
+          <button class="icon-button" data-action="toggle-theme" aria-label="Toggle color theme" title="Toggle theme">◐</button>
+        </div>
+      </header>
+
+      <main id="main-content" tabindex="-1">
+        <div id="app" aria-live="polite"></div>
+      </main>
+
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="#/today" data-nav="today"><span>⌂</span><small>Today</small></a>
+        <a href="#/library" data-nav="library"><span>⌕</span><small>Library</small></a>
+        <a href="#/patterns" data-nav="patterns"><span>◇</span><small>Patterns</small></a>
+        <a href="#/recall" data-nav="recall"><span>↻</span><small>Recall</small></a>
+        <a href="#/interview" data-nav="interview"><span>◷</span><small>Interview</small></a>
+        <a href="#/progress" data-nav="progress"><span>↗</span><small>Progress</small></a>
+      </nav>
+    </div>
+  </div>
+
+  <dialog id="search-dialog" class="search-dialog" aria-labelledby="search-title">
+    <form method="dialog" class="search-box-head">
+      <span aria-hidden="true">⌕</span>
+      <label id="search-title" class="sr-only" for="global-search">Search questions</label>
+      <input id="global-search" autocomplete="off" placeholder="Search by question, trigger, or pattern…">
+      <button value="cancel" aria-label="Close search">Esc</button>
+    </form>
+    <div id="search-results" class="search-results"></div>
+  </dialog>
+
+  <div id="toast-region" class="toast-region" role="status" aria-live="polite"></div>
+  <input id="import-file" type="file" accept="application/json" hidden>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

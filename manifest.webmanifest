@@ -1,0 +1,12 @@
+{
+  "name": "RecallLoop — C++ DSA Memory Lab",
+  "short_name": "RecallLoop",
+  "description": "Recognize, reconstruct, and recall high-yield C++ DSA patterns.",
+  "start_url": "./#/today",
+  "display": "standalone",
+  "background_color": "#f6f4ee",
+  "theme_color": "#101b35",
+  "icons": [
+    { "src": "./favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

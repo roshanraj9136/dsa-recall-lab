@@ -1,0 +1,17 @@
+# Deployment and local tooling
+.vercel/
+node_modules/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs
+*.log
+npm-debug.log*
+
+
+# Local validation artifacts
+artifacts/
